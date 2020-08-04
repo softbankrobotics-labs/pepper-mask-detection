@@ -4,11 +4,11 @@ This Android library will help you detect people wearing face masks or not with 
 
 It is based on [AIZoo's FaceMaskDetection](https://github.com/AIZOOTech/FaceMaskDetection), and uses the same model, running on Pepper's tablet, using OpenCV.
 
-This can be used to make Pepper give a personalized welcome to human depending on whether they are wearing a frame or not.
+This can be used to make Pepper give a personalized welcome to human depending on whether they are wearing a mask or not.
 
 ## 1. Video demonstration
 
-See [this video](https://youtu.be/4Ll40uxssBs) (which is based on an early versions of this app, the current GUI has evolved).
+See [this video](https://youtu.be/4Ll40uxssBs) (which is based on an early version of this app, the current GUI has evolved).
 
 ## 2. Getting started
 
@@ -22,9 +22,9 @@ Note that this application will not work on a simulated robot.
 
 ## 3. Using the library in your project
 
-### 3.1. Add the library as a dependancy
+### 3.1. Add the library as a dependency
 
-You can use Jitpack (https://jitpack.io/) to add the library as a gradle dependancy.
+You can use Jitpack (https://jitpack.io/) to add the library as a gradle dependency.
 
 **Step 1)** add JitPack repository to your build file:
 
@@ -56,7 +56,7 @@ You have two options to add the OpenCV libraries to your project:
 
 With this method you directly add the libraries to your apk. The disadvantage of this method is that your apk will become larger.
 
-Copy the .so files you will find in the folder [app/src/main/jniLibs](app/src/main/jniLibs) (in the sample app) into your own src/main folder.
+Copy the `jniLibs` folder [app/src/main/jniLibs](app/src/main/jniLibs) (in the sample app) into your own `src/main` folder.
 Android studio will automatically find and include these libraries into your apk.
 
 Note that the sample application only contains libraries compiled for the "armeabi-v7a" architecture, which is the one used by Pepper's tablet.
@@ -101,9 +101,9 @@ class MyActivity : AppCompatActivity(), RobotLifecycleCallbacks() {
 The detection requires two components:
 
  * A Camera capturer, for retrieving images; the library provides one for the top or bottom camera
- * A Detector, for processing the images and returning whether they have a mask; the library provides one using Open CV and AIZoo's model, but you could implement your own based on another technology.
+ * A Detector, for processing the images and returning whether they have a mask; the library provides one using OpenCV and AIZoo's model, but you could implement your own based on another technology.
 
-To build a dector and start detection, do this:
+To build a detector and start detection, do this:
 
 ```kotlin
     val detector = AizooFaceMaskDetector(this)
@@ -116,7 +116,7 @@ To build a dector and start detection, do this:
 
 Each time an image is processed, this callback will be called with a (possibly empty) list of faces detected.
 
-The callback will be a list of ̀`DetectedFace`, called for each image processed
+The callback will be a list of `DetectedFace`, called for each image processed
 
 ```kotlin
     faces.forEach {
@@ -134,14 +134,14 @@ The callback will be a list of ̀`DetectedFace`, called for each image processed
 In addition to hasMask and confidence, you can also get the face's boundingBox, and the corresponding picture (which will be a square slightly larger than the actual bounding box, for better display).
 
 
-Note that this API doesn *not* work exactly like the built-in [humansAround detection](https://developer.softbankrobotics.com/pepper-qisdk/api/perceptions/tutorials/humanawareness-human), in that for each detection a new `DetectedFace` object is returned, you cannot compare the items to the previously received list.
+Note that this API does *not* work exactly like the built-in [humansAround detection](https://developer.softbankrobotics.com/pepper-qisdk/api/perceptions/tutorials/humanawareness-human), in that for each detection a new `DetectedFace` object is returned, you cannot compare the items to the previously received list.
 
 This means that once a human wearing a mask is in front of Pepper, this callback will be called very often - if your goal is to make Pepper give a custom welcome, you may want to add a timer to avoid giving too often, or wait before not seeing anybody (or better, not seeing anybody during e.g. one second) before allowing Pepper to give a welcome again.
 
 
 ### 4.3. Using the tablet camera
 
-Pepper's tablet camera has the advantage of having a slightly better resolution and framerate, but doesn't always correspond to the angle Pepper is looking at.
+Pepper's tablet camera has the advantage of having a slightly better framerate, but doesn't always correspond to the angle Pepper is looking at.
 
 Before you use it, you need to make sure you have the permissions to do that, [as explained here](https://developer.android.com/training/permissions/requesting). Once you have the permission, you can create a BottomCameraCapturer and start detecting:
 
@@ -155,7 +155,7 @@ Before you use it, you need to make sure you have the permissions to do that, [a
 
 ### 4.4. Using the head camera
 
-The head camera has the advantage of tracking humans Pepper sees, and looks at them from a slightly better angle, but has a less good framerate. Note that head tracking relies on Pepper's built-in human awareness to have detected the human, which will not happen as easily for people wearing face masks
+The head camera has the advantage of tracking humans Pepper sees, and looks at them from a slightly better angle, but has a less good framerate. Note that head tracking relies on Pepper's built-in human awareness to have detected the human, which will not happen as easily for people wearing face masks.
 
 To use the head's camera, use the TopCameraCapturer, that requires a qiContext, in onRobotFocusGained:
 
