@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="375"
+   height="445"
+   viewBox="0 0 375 445"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="rectangle_cutting.svg">
+  <metadata
+     id="metadata48">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#f0f0f0"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="981"
+     inkscape:window-height="890"
+     id="namedview46"
+     showgrid="false"
+     showguides="false"
+     inkscape:zoom="2"
+     inkscape:cx="172.9661"
+     inkscape:cy="282.5"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg2" />
+  <defs
+     id="defs4">
+    <style
+       id="style6">.a{fill:#f0f0f0;}.b,.d{fill:none;}.b{stroke:#fff;opacity:0.03;}.c{stroke:none;}.e{filter:url(#c);}.f{filter:url(#a);}</style>
+    <filter
+       id="a"
+       x="30"
+       y="30"
+       width="345"
+       height="415"
+       filterUnits="userSpaceOnUse">
+      <feOffset
+         dx="15"
+         dy="15"
+         input="SourceAlpha"
+         id="feOffset9" />
+      <feGaussianBlur
+         stdDeviation="7.5"
+         result="b"
+         id="feGaussianBlur11" />
+      <feFlood
+         flood-opacity="0.051"
+         id="feFlood13" />
+      <feComposite
+         operator="in"
+         in2="b"
+         id="feComposite15"
+         result="result1" />
+      <feComposite
+         in="SourceGraphic"
+         id="feComposite17"
+         in2="result1" />
+    </filter>
+    <filter
+       id="c"
+       x="0"
+       y="0"
+       width="345"
+       height="415"
+       filterUnits="userSpaceOnUse">
+      <feOffset
+         dx="-15"
+         dy="-15"
+         input="SourceAlpha"
+         id="feOffset20" />
+      <feGaussianBlur
+         stdDeviation="7.5"
+         result="d"
+         id="feGaussianBlur22" />
+      <feFlood
+         flood-color="#fff"
+         flood-opacity="0.502"
+         id="feFlood24" />
+      <feComposite
+         operator="in"
+         in2="d"
+         id="feComposite26"
+         result="result1" />
+      <feComposite
+         in="SourceGraphic"
+         id="feComposite28"
+         in2="result1" />
+    </filter>
+  </defs>
+  <g
+     style="filter:url(#a)"
+     id="g32"
+     class="f">
+    <rect
+       style="fill:#f0f0f0"
+       y="0"
+       x="0"
+       id="rect34"
+       transform="translate(37.5,37.5)"
+       rx="30"
+       height="370"
+       width="300"
+       class="a" />
+  </g>
+  <rect
+     class="a"
+     width="300"
+     height="370"
+     rx="30"
+     id="rect38"
+     x="37.5"
+     y="37.5"
+     style="fill:#f0f0f0;filter:url(#c)" />
+  <g
+     style="opacity:0.02999998;fill:none;stroke:#ffffff"
+     id="g40"
+     class="b"
+     transform="translate(37.5,37.5)">
+    <rect
+       style="stroke:none"
+       y="0"
+       x="0"
+       id="rect42"
+       rx="30"
+       height="370"
+       width="300"
+       class="c" />
+    <rect
+       style="fill:none"
+       id="rect44"
+       rx="29.5"
+       height="369"
+       width="299"
+       y="0.5"
+       x="0.5"
+       class="d" />
+  </g>
+</svg>

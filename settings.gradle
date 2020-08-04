@@ -1,0 +1,4 @@
+include ':FaceMaskDetection'
+rootProject.name='PepperMaskDetection'
+include ':app', ':OpenCV'
+
