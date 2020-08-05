@@ -46,6 +46,7 @@ class FaceMaskDetection(private val detector: FaceMaskDetector, private val came
                         msg.detectedFaces.complete(detector.recognize(msg.picture))
                     } catch (e: CvException) {
                         Log.e(TAG, "Error processing picture of ${msg.picture.height} x ${msg.picture.width} sent at ${msg.sentTime}")
+                        msg.detectedFaces.completeExceptionally(e)
                     }
                 }
             }
@@ -63,9 +64,12 @@ class FaceMaskDetection(private val detector: FaceMaskDetector, private val came
                     val detectedFacesDeferred = CompletableDeferred<List<FaceMaskDetector.DetectedFace>>()
                     busy = true
                     actor.send(Message.FaceMaskDetect(picture, detectedFacesDeferred, sentTime))
-                    val faces = detectedFacesDeferred.await()
-                    onFaceDetected(faces)
-                    busy = false
+                    try {
+                        val faces = detectedFacesDeferred.await()
+                        onFaceDetected(faces)
+                    } finally {
+                        busy = false
+                    }
                 }
             }
         }
