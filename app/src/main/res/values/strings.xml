@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">PepperMaskDetection</string>
+    <string name="app_name">PepperMaskDetection 1.3.2</string>
     <string name="permissions_needed">Camera and Microphone permissions needed. Please allow in App Settings for additional functionality.</string>
     <string name="mask">Mask</string>
     <string name="no_mask">No Mask</string>
