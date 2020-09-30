@@ -28,7 +28,7 @@ class FaceMaskDetection(private val detector: FaceMaskDetector, private val came
 
     private val detectionScope = CoroutineScope(
         ThreadPoolExecutor(1, 1, 30, TimeUnit.SECONDS,
-        ArrayBlockingQueue(1), ThreadPoolExecutor.DiscardOldestPolicy()).asCoroutineDispatcher())
+            ArrayBlockingQueue(1), ThreadPoolExecutor.DiscardOldestPolicy()).asCoroutineDispatcher())
 
     sealed class Message {
         class FaceMaskDetect(
@@ -44,7 +44,7 @@ class FaceMaskDetection(private val detector: FaceMaskDetector, private val came
                 is Message.FaceMaskDetect -> {
                     try {
                         msg.detectedFaces.complete(detector.recognize(msg.picture))
-                    } catch (e: CvException) {
+                    } catch (e: Throwable) {
                         Log.e(TAG, "Error processing picture of ${msg.picture.height} x ${msg.picture.width} sent at ${msg.sentTime}")
                         msg.detectedFaces.completeExceptionally(e)
                     }
@@ -67,6 +67,10 @@ class FaceMaskDetection(private val detector: FaceMaskDetector, private val came
                     try {
                         val faces = detectedFacesDeferred.await()
                         onFaceDetected(faces)
+                    }  catch (e:CvException) {
+                        Log.w(TAG, "OpenCV Exception during face processing (sometimes happens), ignoring: $e")
+                    }  catch (e:Throwable) {
+                        Log.e(TAG, "Unexpected exception from face mask processing: $e")
                     } finally {
                         busy = false
                     }
