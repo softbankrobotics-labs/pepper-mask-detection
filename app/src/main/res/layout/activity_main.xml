@@ -4,32 +4,55 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_gravity="center"
+    android:layout_gravity="bottom"
     android:background="#F0F0F0"
-    android:foregroundGravity="center"
+    android:foregroundGravity="bottom"
     tools:context=".MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="center"
+        android:layout_gravity="bottom"
         android:layout_margin="15sp"
-        android:gravity="center"
+        android:gravity="bottom"
         android:orientation="vertical"
         tools:context=".MainActivity">
 
-        <include
-            android:id="@+id/big_card"
-            layout="@layout/face_layout_big"
-            android:layout_width="250sp"
-            android:layout_height="305sp">
-
-        </include>
-
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
             android:orientation="horizontal">
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="340dp"
+            android:layout_height="wrap_content"
+            android:padding="00dp"
+            android:layout_gravity="top"
+            app:srcCompat="@drawable/sbrlogo" />
+
+            <include
+                android:id="@+id/big_card"
+                layout="@layout/face_layout_big"
+                android:layout_width="250dp"
+                android:layout_height="305dp">
+
+            </include>
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="340dp"
+                android:layout_height="wrap_content"
+                android:padding="00dp"
+                android:layout_gravity="top"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/sbrlogo" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="700dp"
+            android:layout_height="200dp"
+            android:orientation="horizontal"
+            android:layout_gravity="center">
 
             <include
                 android:id="@+id/little_card_1"

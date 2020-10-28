@@ -1,0 +1,108 @@
+topic: ~chat()
+
+proposal: %GREETING_MASK
+    ^rand[
+        "Ah, je vois que tu portes un masque"
+        "Je suis content de voir que tu portes un masque"
+        "J'aime bien ton sourire derrière le masque"
+    ]
+
+proposal: %GREETING_NO_MASK
+    ^rand[
+        "["N'oublie pas" "Merci"] de [mettre porter] un masque {"s'il te plait"}"
+        "Il faut toujours bien porter un masque"
+    ]
+
+proposal: %NEW_WITHOUT_MASK
+    "Je ne suis pas sûr que tout le monde porte bien son masque"
+
+proposal: %TOOK_OFF_MASK
+    "Il ne faut pas enlever son masque"
+
+proposal: %PUT_ON_MASK
+    "Merci d'avoir remis ton masque"
+
+proposal: %MANY_PEOPLE
+    ^rand [
+        "Ah je vois que vous êtes nombreux, ça fait plaisir"
+        "On dirait que j'ai du succès"
+        "Je suis content de voir que vous portez tousse vos masques"
+        "N'oubliez pas de respecter la distanciation sociale"
+    ]
+
+u:(["Qu'est-ce que tu fais [ici là] ?"
+    "Que fais-tu [ici là] ?"
+    "Pourquoi ["es-tu" "tu es"] [là ici] ?"
+    ])
+    Je suis là pour accueillir les gens et voir s'ils portent bien leur masque
+
+u:(["a quoi tu sers"
+    "a quoi sers tu"
+       "tu sers a quoi ?"])
+    Je suis un robot d'accueil
+
+u:(Pourquoi ["es-tu" "tu es" "t'es"] [là ici] ?)
+    Je suis là pour détecter les personnes qui ne portent pas de masques
+
+concept:(as_tu) [
+ "est-ce que tu as"
+ "est-ce que t'as"
+ "tu as"
+ "t'as"
+ "as tu"
+  ]
+
+u:([
+    "Comment tu fais pour"
+    "Tu fais comment pour"
+    "Comment tu arrives à"
+    "Comment t'arrives à"
+    ]
+    [
+        "[voir détecter]
+        [
+            "mon masque ?"
+            "les masques ?"
+            "les gens qui portent des masques ?"
+        ]"
+        "[voir détecter savoir]
+        [
+            "si je porte un masque ?"
+            "qui porte [un son] masque ?"
+        ]"
+    ])
+    Je sais que tu portes un masque quand le bas de ton visage est caché
+
+u:(Comment tu [détectes sais]
+    [
+        "si je porte un masque ?"
+        "qui porte [un son] masque ?"
+    ])
+    Je sais que tu portes un masque quand le bas de ton visage est caché
+
+u:(Comment tu détectes
+    [
+       "mon masque ?"
+       "les masques ?"
+       "les gens qui portent des masques ?"
+   ])
+   Je sais que tu portes un masque quand le bas de ton visage est caché
+
+u:(["{comment} ca va ?"
+    "Comment tu vas ?"
+    "Comment vas tu ?"
+    "Tu vas bien ?"
+    ])
+    Ca va et toi ?
+
+u:([
+    "Très bien {merci}"
+    "Ca va {bien} {merci}"
+    "Je vais bien {merci}"
+    ])
+    ^rand[
+        "Content de savoir que tu vas bien"
+    ]
+
+u:("Bonjour {Pepper}")
+    Bonjour humain

@@ -1,0 +1,79 @@
+topic: ~chat()
+
+proposal: %GREETING_MASK
+    ^rand[
+        "Ah, I see you're wearing a mask"
+        "I'm glad to see you're wearing a mask"
+        "I like the way you smile behind your mask"
+    ]
+
+proposal: %GREETING_NO_MASK
+    ^rand[
+        "Don't forget to wear a mask"
+        "Please wear a mask"
+        "You should always wear a mask"
+    ]
+
+proposal: %NEW_WITHOUT_MASK
+    "I'm not sure everybody is wearing a mask"
+
+proposal: %TOOK_OFF_MASK
+    "You shouldn't remove your mask"
+
+proposal: %PUT_ON_MASK
+    "Thank you for having put your mask back on"
+
+proposal: %MANY_PEOPLE
+    ^rand [
+        "Ah I see there are a lot of people"
+        "Ah I'm glad to see so many people"
+        "I'm glad there are so many of you"
+        "I'm glad to see you're wearing your masks"
+        "Please maintain social distancing"
+    ]
+
+u:(["What are you doing here?"
+    "Why are you here?"
+    "What is your job?"
+    "What are you {made} for?"
+    ])
+    ^rand[
+        "I'm here to welcome people, and see if they are wearing face masks"
+        "I'm here to see if they are wearing face masks"
+    ]
+
+u:([
+    "How do you"
+    "How can you"
+    "How do you manage to"
+    ]
+    [see detect know]
+    [
+        "who is wearing a mask?"
+        "who has a mask?"
+        "people with masks?"
+        "people wearing masks?"
+        "if I'm wearing a mask"
+        "if I have a mask"
+    ])
+    I know you wear a mask if the bottom of your face is hidden
+
+u:(["How are you {doing}?"
+    "How are things?"
+    "Are you doing fine?"
+    ])
+    I'm fine, thanks, and you?
+
+u:([
+    "I'm [fine okay] {thanks}"
+    ])
+    ^rand[
+        "I'm glad to hear that"
+        "It's good to hear that"
+    ]
+
+u:("[Hello "good morning"] {Pepper}")
+    Hello human
+
+u:(Hi Pepper)
+    Hello human

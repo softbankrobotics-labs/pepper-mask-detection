@@ -2,8 +2,8 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="192sp"
-    android:layout_height="254sp"
+    android:layout_width="151dp"
+    android:layout_height="200dp"
     android:background="@drawable/rectangle">
 
     <androidx.constraintlayout.widget.Guideline
@@ -15,9 +15,9 @@
 
     <ImageView
         android:id="@+id/photo"
-        android:layout_width="130sp"
-        android:layout_height="130sp"
-        android:layout_marginTop="28dp"
+        android:layout_width="102sp"
+        android:layout_height="102sp"
+        android:layout_marginTop="22dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline2"
@@ -27,7 +27,7 @@
         android:id="@+id/cardMask"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="21sp"
+        android:layout_margin="17dp"
         android:src="@drawable/ic_maskcircle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -35,9 +35,9 @@
 
     <ImageView
         android:id="@+id/circle"
-        android:layout_width="150sp"
-        android:layout_height="150sp"
-        android:layout_marginTop="19dp"
+        android:layout_width="118sp"
+        android:layout_height="118sp"
+        android:layout_marginTop="15dp"
         android:tint="#C7C7C7"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -48,7 +48,7 @@
         android:id="@+id/label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="@+id/cardMask"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

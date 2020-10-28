@@ -28,7 +28,7 @@ class FaceMaskDetection(private val detector: FaceMaskDetector, private val came
 
     private val detectionScope = CoroutineScope(
         ThreadPoolExecutor(1, 1, 30, TimeUnit.SECONDS,
-            ArrayBlockingQueue(1), ThreadPoolExecutor.DiscardOldestPolicy()).asCoroutineDispatcher())
+        ArrayBlockingQueue(1), ThreadPoolExecutor.DiscardOldestPolicy()).asCoroutineDispatcher())
 
     sealed class Message {
         class FaceMaskDetect(
