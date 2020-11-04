@@ -39,10 +39,10 @@ allprojects {
 	}
 ```
 
-**Step 2)** Add the dependency on the face recognition lib to your app build.gradle in the dependencies section:
+**Step 2)** Add the dependency on the face detection lib to your app build.gradle in the dependencies section:
 
 	dependencies {
-		implementation 'com.github.softbankrobotics-labs:pepper-mask-recognition:master-SNAPSHOT'
+		implementation 'com.github.softbankrobotics-labs:pepper-mask-detection:master-SNAPSHOT'
 	}
 
 
