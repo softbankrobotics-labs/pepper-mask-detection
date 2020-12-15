@@ -55,8 +55,8 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
     // QiSDK
-    implementation 'com.aldebaran:qisdk:1.6.7'
-	implementation 'com.aldebaran:qisdk-design:1.6.7'
+    implementation 'com.aldebaran:qisdk:1.5.3'
+	implementation 'com.aldebaran:qisdk-design:1.5.3'
 
     // OpenCV
     implementation project(":OpenCV")
