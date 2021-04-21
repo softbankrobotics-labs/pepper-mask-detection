@@ -121,10 +121,10 @@ The callback will be a list of `DetectedFace`, called for each image processed
 ```kotlin
     faces.forEach {
         when {
-            (it.confidence < 0.5) && it.hasMask -> {
+            (it.confidence > 0.5) && it.hasMask -> {
                 // Process "someone has a mask"
             }
-            (it.confidence < 0.5) && !it.hasMask -> {
+            (it.confidence > 0.5) && !it.hasMask -> {
                 // Process "someone Doesn't have a mask"
             }
         }
